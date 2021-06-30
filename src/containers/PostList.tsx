@@ -1,39 +1,38 @@
 import React, { useState } from 'react';
 import PostListItem from '../components/PostListItem';
-import { Button } from '@material-ui/core';
+import { Button, Col, Row } from 'react-bootstrap';
 import { PostListState as Props } from '../interfaces';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { useAppSelector } from '../hooks/index';
 
 const PostList = ({}: Props): JSX.Element => {
-	const postIds: string[] | undefined = useAppSelector(
-		state => state.posts.allIds
-	);
-	const [addPostClicked, setAddPostClicked] = useState(false);
+	const postIds: string[] = useAppSelector(state => state.posts.allIds);
+	const history = useHistory();
 	return (
 		<>
-			{!addPostClicked ? (
-				<div className='post-list'>
-					<Button
-						className='post-list-add'
-						onClick={() => setAddPostClicked(true)}
-					>
-						Add Post
-					</Button>
-
-					<ul className='post-list-body'>
-						{postIds ? (
-							postIds.map(id => (
-								<PostListItem postId={id}></PostListItem>
-							))
-						) : (
-							<></>
-						)}
+			<Col className='post-list'>
+				<Row className='page-header'>
+					<h1 className='page-header-title'>Posts</h1>
+				</Row>
+				<Row>
+					<div className='post-list-header-buttons'>
+						<Button
+							variant='secondary'
+							className='post-list-add'
+							onClick={() => history.push('/edit-post/new')}
+						>
+							+ Add Post
+						</Button>
+					</div>
+				</Row>
+				<Row className='post-list-body'>
+					<ul className='post-list'>
+						{postIds.map(id => (
+							<PostListItem postId={id} />
+						))}
 					</ul>
-				</div>
-			) : (
-				<Redirect to='/edit-post/new'></Redirect>
-			)}
+				</Row>
+			</Col>
 		</>
 	);
 };

@@ -1,2 +1,77 @@
+span{
+	letter-spacing: 0.08em;
+}
 
+
+
+
+.navbar{
+	border-radius: 10px;
+	margin: 0.8rem;
+}
+
+.body-container{
+	margin-top: 2rem;
+}
+
+.page-header {
+	background-color:#212529;
+	border-radius: 10px;
+	color: white;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+.page-header-title{
+	font-size: 3rem;
+	font-weight:bold;
+	margin-bottom: 4rem;
+}
+
+.post-list{
+	margin-bottom: 2rem;
+	list-style-type: none;
+}
+
+
+.page-header-buttons{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.post-list-item{
+	/* margin-top:0.5rem; */
+	margin-bottom: 1.5rem;
+}
+
+.post-list-item-container:hover{
+	cursor: pointer;
+	opacity: 70%;
+}
+
+
+.post-list-item-title{
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+
+.post-list-item-subtitle{
+	font-size: 1.4rem;
+	font-weight: lighter;
+}
+
+.post-list-item-author-name{
+	
+	font-weight: bold;
+}
+
+
+.post-body{
+	
+	line-height: 1.2;
+}
+
+.post-body-container{
+	margin-top: 1rem;
+}
 
