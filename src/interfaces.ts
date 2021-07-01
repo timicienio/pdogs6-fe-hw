@@ -33,6 +33,11 @@ export interface EditPostPayload {
 	data: PostData;
 }
 
+export interface DeletePostPayload {
+	id: string;
+	commentIds: string[];
+}
+
 export interface AddCommentPayload {
 	postId: string;
 	data: CommentData;
@@ -40,6 +45,10 @@ export interface AddCommentPayload {
 
 export interface EditCommentPayload {
 	data: CommentData;
+}
+
+export interface DeleteCommentPayload {
+	id: string;
 }
 
 // database
@@ -50,10 +59,21 @@ export interface BaseRecord {
 
 // States / Props
 
+export interface PostListState {}
 export interface PostListItemState {
 	postId: string;
 }
 
-export interface PostListState {}
+export interface CommentListState {
+	postId: string;
+}
+
+export interface CommentListItemState {
+	commentId: string;
+}
 
 export interface PostEditorState {}
+
+export interface CommentEditorState {
+	postId: string;
+}

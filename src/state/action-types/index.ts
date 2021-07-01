@@ -1,6 +1,7 @@
 export enum ActionType {
 	ADD_POST,
 	EDIT_POST,
+	DELETE_POST,
 	ADD_COMMENT,
 	EDIT_COMMENT,
 }

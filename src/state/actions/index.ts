@@ -1,6 +1,7 @@
 import {
 	AddPostPayload,
 	EditPostPayload,
+	DeletePostPayload,
 	AddCommentPayload,
 	EditCommentPayload,
 } from '../../interfaces';
@@ -16,6 +17,11 @@ interface EditPostAction {
 	payload: EditPostPayload;
 }
 
+interface DeletePostAction {
+	type: ActionType.DELETE_POST;
+	payload: DeletePostPayload;
+}
+
 interface AddCommentAction {
 	type: ActionType.ADD_COMMENT;
 	payload: AddCommentPayload;
@@ -29,5 +35,6 @@ interface EditCommentAction {
 export type Action =
 	| AddPostAction
 	| EditPostAction
+	| DeletePostAction
 	| AddCommentAction
 	| EditCommentAction;

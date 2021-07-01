@@ -18,6 +18,12 @@ export const editPost = (data: PostData) => {
 	};
 };
 
+export const deletePost = (id: string, commentIds: string[]) => {
+	return (dispatch: Dispatch<Action>) => {
+		dispatch({ type: ActionType.DELETE_POST, payload: { id, commentIds } });
+	};
+};
+
 export const addComment = (postId: string, data: CommentData) => {
 	return (dispatch: Dispatch<Action>) => {
 		dispatch({ type: ActionType.ADD_COMMENT, payload: { postId, data } });

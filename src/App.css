@@ -67,11 +67,39 @@ span{
 
 
 .post-body{
-	
 	line-height: 1.2;
 }
 
 .post-body-container{
+	font-size: 18px;
 	margin-top: 1rem;
 }
 
+.comment-list-container{
+	margin-top: 1rem
+}
+
+.comment-list-title{
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.comment-list{
+	padding: unset;
+	list-style-type: none;
+}
+
+.comment-list-item{
+	margin-bottom: 0.5rem;
+}
+
+.comment-editor{
+	padding: 1rem;
+	margin-bottom: 1rem
+}
+
+.app-footer
+{
+	padding: 1rem;
+	text-align: center;
+}
