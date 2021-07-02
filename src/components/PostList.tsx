@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import PostListItem from './PostListItem';
 import { Button, Col, Row } from 'react-bootstrap';
 import { PostListState as Props } from '../interfaces';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAppSelector } from '../hooks/index';
 
 const PostList = ({}: Props): JSX.Element => {
 	const history = useHistory();
 	const postIds: string[] = useAppSelector(state => state.posts.allIds);
-	useEffect(() => {
-		console.log(postIds);
-	}, [postIds]);
+
 	return (
 		<Col>
 			<Row className='page-header'>

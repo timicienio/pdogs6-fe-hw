@@ -68,7 +68,12 @@ const deleteAllCommentsEntriesInPost = (
 	state: { [id: string]: CommentData },
 	comments: string[]
 ) => {
-	return Object.keys(state).filter(key => !comments.includes(state[key].id));
+	return Object.keys(state)
+		.filter(key => !comments.includes(state[key].id))
+		.reduce((newState: { [id: string]: CommentData }, key: string) => {
+			newState[key] = state[key];
+			return newState;
+		}, {});
 };
 
 const commentsById = (

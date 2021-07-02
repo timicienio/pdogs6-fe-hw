@@ -39,7 +39,7 @@ const Post = () => {
 				show={showConfirmDelete}
 				onClose={() => setShowConfirmDelete(false)}
 			>
-				<Modal.Header closeButton>
+				<Modal.Header>
 					<Modal.Title> Confirm Deletion</Modal.Title>
 				</Modal.Header>
 
@@ -48,7 +48,12 @@ const Post = () => {
 				</Modal.Body>
 
 				<Modal.Footer>
-					<Button variant='secondary'>Cancel</Button>
+					<Button
+						variant='secondary'
+						onClick={() => setShowConfirmDelete(false)}
+					>
+						Cancel
+					</Button>
 					<Button
 						variant='danger'
 						onClick={() => handleDeletePost(id, comments)}
